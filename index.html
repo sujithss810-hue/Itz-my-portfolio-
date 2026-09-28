@@ -3,7 +3,967 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sujith Portfolio</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:
+linear-gradient(
+135deg,
+#000000,
+#021b16,
+#032d26,
+#001d26,
+#000000
+);
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:15px 35px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #00ff88;
+z-index:999;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#00ff88;
+}
+
+nav ul{
+display:flex;
+gap:22px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+transition:.4s;
+font-size:15px;
+}
+
+nav ul li a:hover{
+color:#00ff88;
+text-shadow:0 0 15px #00ff88;
+}
+
+/* RESUME BUTTON */
+
+.resume-top-btn{
+position:fixed;
+top:80px;
+right:20px;
+z-index:999;
+transition:.4s;
+}
+
+.resume-top-btn.hide{
+opacity:0;
+pointer-events:none;
+transform:translateY(-20px);
+}
+
+.resume-top-btn button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:
+linear-gradient(
+45deg,
+#00ff88,
+#00bfff
+);
+color:black;
+font-weight:bold;
+cursor:pointer;
+box-shadow:
+0 0 15px rgba(0,255,136,.4);
+}
+
+/* SECTIONS */
+
+section{
+padding:110px 8% 60px;
+}
+
+h2{
+text-align:center;
+font-size:38px;
+margin-bottom:35px;
+color:#00ff88;
+}
+
+/* HOME */
+
+#home{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.home-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.profile-card{
+width:270px;
+height:330px;
+border-radius:22px;
+overflow:hidden;
+border:2px solid #00ff88;
+box-shadow:
+0 0 25px rgba(0,255,136,.3);
+}
+
+.profile-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.home-text h1{
+font-size:55px;
+margin-bottom:10px;
+}
+
+.home-text span{
+color:#00ff88;
+}
+
+.home-text p{
+font-size:18px;
+color:#ccc;
+line-height:1.8;
+}
+
+.home-buttons{
+margin-top:30px;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:12px 28px;
+border-radius:35px;
+border:2px solid #00ff88;
+text-decoration:none;
+color:#00ff88;
+transition:.4s;
+font-weight:bold;
+}
+
+.btn:hover{
+background:#00ff88;
+color:black;
+box-shadow:0 0 15px #00ff88;
+}
+
+/* COMMON BOX */
+
+.box{
+max-width:1000px;
+margin:auto;
+padding:28px;
+border-radius:22px;
+background:
+linear-gradient(
+145deg,
+rgba(0,255,136,.08),
+rgba(0,180,255,.05)
+);
+border:2px solid rgba(0,255,136,.4);
+line-height:1.9;
+}
+
+/* SKILLS */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
+}
+
+.skill-box{
+padding:25px;
+border-radius:20px;
+text-align:center;
+background:
+linear-gradient(
+145deg,
+rgba(0,255,136,.08),
+rgba(0,180,255,.05)
+);
+border:2px solid rgba(0,255,136,.4);
+transition:.4s;
+}
+
+.skill-box:hover{
+transform:translateY(-8px);
+box-shadow:0 0 18px rgba(0,255,136,.3);
+}
+
+.skill-box i{
+font-size:40px;
+margin-bottom:15px;
+color:#00ff88;
+}
+
+.skill-box h3{
+margin-bottom:15px;
+color:#00ff88;
+}
+
+/* PROJECT */
+
+.project-box{
+max-width:1000px;
+margin:auto;
+padding:28px;
+border-radius:22px;
+background:
+linear-gradient(
+145deg,
+rgba(0,255,136,.08),
+rgba(0,180,255,.05)
+);
+border:2px solid rgba(0,255,136,.4);
+line-height:1.9;
+}
+
+.project-box a{
+display:inline-block;
+margin-top:20px;
+padding:10px 22px;
+border-radius:30px;
+border:2px solid #00ff88;
+color:#00ff88;
+text-decoration:none;
+}
+
+.project-box a:hover{
+background:#00ff88;
+color:black;
+}
+
+/* CERTIFICATE */
+
+.cert-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
+}
+
+.cert-box{
+padding:20px;
+border-radius:20px;
+background:
+linear-gradient(
+145deg,
+rgba(0,255,136,.08),
+rgba(0,180,255,.05)
+);
+border:2px solid rgba(0,255,136,.4);
+}
+
+.cert-box h3{
+margin-bottom:10px;
+color:#00ff88;
+}
+
+.cert-box img{
+width:100%;
+height:190px;
+object-fit:cover;
+border-radius:12px;
+margin-top:15px;
+cursor:pointer;
+}
+
+/* CONTACT */
+
+.contact-icons{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.contact-icons a{
+width:70px;
+height:70px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+border:2px solid #00ff88;
+font-size:28px;
+color:#00ff88;
+text-decoration:none;
+transition:.4s;
+}
+
+.contact-icons a:hover{
+background:#00ff88;
+color:black;
+transform:translateY(-8px);
+box-shadow:0 0 18px #00ff88;
+}
+
+/* MODAL */
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.95);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:5000;
+padding:20px;
+}
+
+.modal-content{
+text-align:center;
+}
+
+.modal img{
+max-width:95%;
+max-height:75vh;
+border-radius:15px;
+border:3px solid #00ff88;
+}
+
+.modal span{
+position:absolute;
+top:20px;
+right:30px;
+font-size:40px;
+cursor:pointer;
+color:#00ff88;
+}
+
+/* DOWNLOAD BUTTON */
+
+.download-btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 30px;
+border-radius:35px;
+background:
+linear-gradient(
+45deg,
+#00ff88,
+#00bfff
+);
+color:black;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+padding:15px;
+flex-direction:column;
+gap:10px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:12px;
+}
+
+section{
+padding:120px 20px 60px;
+}
+
+.home-container{
+flex-direction:column;
+text-align:center;
+}
+
+.home-text h1{
+font-size:38px;
+}
+
+.home-text p{
+font-size:15px;
+}
+
+.home-buttons{
+justify-content:center;
+}
+
+.resume-top-btn{
+top:110px;
+right:10px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">SUJITH</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#certificates">Certificates</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!-- RESUME BUTTON -->
+
+<div class="resume-top-btn">
+
+<button onclick="openResume()">
+Resume
+</button>
+
+</div>
+
+<!-- HOME -->
+
+<section id="home">
+
+<div class="home-container">
+
+<div class="profile-card">
+
+<img src="https://crucial-coffee-qlo4jera8t.edgeone.app/IMG-20260115-WA0003.jpg">
+
+</div>
+
+<div class="home-text">
+
+<h1>Hi, I'm <span>Sujith</span></h1>
+
+<p>
+BCA Graduate | Web Developer | Frontend Designer
+</p>
+
+<div class="home-buttons">
+
+<a href="#about" class="btn">
+Hire Me
+</a>
+
+<a href="#contact" class="btn">
+Contact
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2>About</h2>
+
+<div class="box">
+
+BCA Graduate with a keen interest in information technology and software systems. Familiar with
+programming basics, databases, and computer applications. Strong desire to learn, grow, and
+adapt to new technologies. Committed to building a career in the IT field.
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-box">
+
+<i class="fa-brands fa-html5"></i>
+
+<h3>Web Development</h3>
+
+<p>
+• HTML5, CSS3, JavaScript<br>
+<br>
+• Responsive Design<br>
+<br>
+• UI / UX Layout Design
+</p>
+
+</div>
+
+<div class="skill-box">
+
+<i class="fa-solid fa-code"></i>
+
+<h3>Programming</h3>
+
+<p>
+• Python, C, Java<br>
+<br>
+• OOP, DBMS, Data Structure<br>
+<br>
+
+</p>
+
+</div>
+
+<div class="skill-box">
+
+<i class="fa-solid fa-palette"></i>
+
+<h3>Creative Design</h3>
+
+<p>
+• UI Design<br>
+<br>
+• Poster Design<br>
+<br>
+• Canva Basics<br>
+<br>
+• Video Editing
+</p>
+
+</div>
+
+<div class="skill-box">
+
+<i class="fa-solid fa-laptop-code"></i>
+
+<h3>Software</h3>
+
+<p>
+• VS Code<br>
+<br>
+• GitHub<br>
+<br>
+• MS Office
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="project-box">
+
+<h3>Movie Review – Rating Platform</h3>
+
+<p>
+The Movie Review & Rating System is a responsive web application where users can browse movies, view details, and submit ratings and reviews. It is built using HTML, CSS, and JavaScript. The project provides an interactive interface with a clean design and smooth navigation. It demonstrates frontend development, DOM manipulation, and responsive web design skills.
+</p>
+
+<a href="https://sujithss810-hue.github.io/Movie-review-rating-system-/" target="_blank">
+View Project
+</a>
+
+</div>
+
+<br>
+
+<div class="project-box">
+
+<h3>Code Color Chart</h3>
+
+<p>
+The Code Color Chart (CCC) is a web application that displays colors along with their HEX, RGB, and HSL values. It helps developers and designers choose and copy color codes quickly. Built using HTML, CSS, and JavaScript, it features an easy-to-use and responsive interface. The project showcases UI design and frontend development skills.
+</p>
+
+<a href="https://sujithss810-hue.github.io/Code-Color-Chart-CCC-/" target="_blank">
+View Project
+</a>
+
+</div>
+
+<br>
+
+<div class="project-box">
+
+<h3>Flip To Card</h3>
+
+<p>
+The Flip-to-Card project is an interactive website that uses CSS 3D animations to flip cards and reveal additional information. It is developed using HTML, CSS, and JavaScript. The project provides a smooth and engaging user experience with a responsive design. It demonstrates modern web animation and frontend development techniques.
+</p>
+
+<a href="https://sujithss810-hue.github.io/Flip-to-card-/" target="_blank">
+View Project
+</a>
+
+</div>
+
+<br>
+
+<div class="project-box">
+
+<h3>AI Security Operations Platform</h3>
+
+<p>
+The AI Security Operations Platform is a full-stack cybersecurity project designed to analyze security logs, detect suspicious activities, classify risk levels, and create security incidents. It provides AI-powered investigation assistance and recommended response actions through an interactive security dashboard.
+</p>
+
+<a href="https://sujithss810-hue.github.io/AI-Security-Platform/" target="_blank">
+View Project
+</a>
+
+</div>
+
+<br>
+
+<div class="project-box">
+
+<h3>Skill Gap Analyzer</h3>
+
+<p>
+The Skill Gap Analyzer is a career-focused web application that compares a user's existing skills with the skills required for a selected job role. It generates a skill-match report, identifies missing skills, and provides a learning plan and recommendations to help users prepare for their target career.
+</p>
+
+<a href="https://sujithss810-hue.github.io/Skill-Gap-Analysis/" target="_blank">
+View Project
+</a>
+
+</div>
+
+<br>
+
+<div class="project-box">
+
+<h3>AI Resume Analyzer</h3>
+
+<p>
+The AI Resume Analyzer is an AI-powered application that analyzes resumes uploaded in PDF, DOCX, or TXT format. It extracts skills and contact information, provides a resume score, matches job roles, identifies keywords, and generates suggestions to improve the resume.
+</p>
+
+<a href="https://sujithss810-hue.github.io/Ai-Resume_analysis/" target="_blank">
+View Project
+</a>
+
+</div>
+
+<br>
+
+<div class="project-box">
+
+<h3>My Portfolio</h3>
+
+<p>
+The Personal Portfolio Website is a responsive web application developed to showcase my profile, technical skills, projects, certifications, education, and contact information. It is built using HTML, CSS, and JavaScript with a modern and user-friendly interface. The website is fully responsive and works smoothly on desktop and mobile devices. This project highlights my web development skills and serves as my professional online portfolio.
+</p>
+
+<a href="https://sujithss810-hue.github.io/Itz-my-portfolio-/" target="_blank">
+View Project
+</a>
+
+</div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+<h2>Education</h2>
+
+<div class="box">
+
+<h3>Bachelor of Computer Applications (BCA)</h3>
+
+<br>
+
+<p>
+Kuvempu University, ShankaraGhatta<br>
+Government First Grade College, Thirthahalli<br>
+Batch: 2023 – 2026
+<br>
+CGPA - 7.56
+</p>
+
+<br>
+
+<h3 style="color:#00ff88;">
+Key Qualifications
+</h3>
+
+<ul style="margin-top:15px;padding-left:20px;line-height:2;">
+
+<li>Programming Languages: C, C++, Java, Python, JavaScript</li>
+<li>Web Technologies: HTML, CSS, JavaScript</li>
+<li>Database & Concepts: MySQL, DBMS, Data Structures, OOP</li>
+<li>Hands-on Experience: Developed web applications, academic projects, and frontend UI designs</li>
+
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- CERTIFICATES -->
+
+<section id="certificates">
+
+<h2>Certificates</h2>
+
+<div class="cert-grid">
+
+<div class="cert-box">
+
+<h3>Front-end Web Development</h3>
+<p>Completed a 6-week Front End Web Development Internship with AICTE and Edunet Foundation. Enhanced practical web development skills.</p>
+<img src="https://uploads.onecompiler.io/44bqrfj6k/44bqrftnw/WhatsApp%20Image%202026-01-26%20at%202.39.30%20PM.jpeg" onclick="openImage(this.src)">
+</div>
+
+<div class="cert-box">
+
+<h3>Cyber Security</h3>
+<p>Completed Cisco's Introduction to Cybersecurity course. Gained knowledge of cyber threats and online security.</p>
+<img src="https://uploads.onecompiler.io/43faapvtu/1784043257877/WhatsApp%20Image%202026-07-14%20at%208.57.42%20PM%20(2).jpeg"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="cert-box">
+
+<h3>Android App Development</h3>
+<p>Completed a workshop on Android Application Development. Learned the basics of Android app development</p>
+<img src="https://uploads.onecompiler.io/43faapvtu/1784043270381/WhatsApp%20Image%202026-07-14%20at%208.57.43%20PM%20(1).jpeg"
+onclick="openImage(this.src)">
+
+</div>
+<div class="cert-box">
+
+<h3>Artificial Intelligence Fundamentals</h3>
+<p>Completed IBM SkillsBuild Artificial Intelligence Fundamentals certification. Learned AI concepts and real-world applications. </p>
+<img src="https://uploads.onecompiler.io/43faapvtu/1784043252117/WhatsApp%20Image%202026-07-14%20at%208.57.42%20PM%20(1).jpeg"
+onclick="openImage(this.src)">
+
+</div>
+<div class="cert-box">
+
+<h3>Web Development Fundamentals</h3>
+<p>Completed IBM SkillsBuild Web Development Fundamentals certification. Learned HTML, CSS, JavaScript, and responsive web design.</p>
+<img src="https://uploads.onecompiler.io/43faapvtu/1784043247048/WhatsApp%20Image%202026-07-14%20at%208.57.42%20PM.jpeg"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="cert-box">
+
+<h3> Web Development Internship (AXCENTRA)</h3>
+<p>Successfully completed a 6-week Web Development Internship at AXCENTRA. Improved practical web development skills. </p>
+<img src="https://uploads.onecompiler.io/43faapvtu/1784043283361/WhatsApp%20Image%202026-07-14%20at%208.57.43%20PM%20(3).jpeg"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="cert-box">
+
+<h3>Cyber Security</h3>
+<p>Completed a Cyber Security Internship at Placement Mantra. Gained practical knowledge of cybersecurity fundamentals and security practices.</p>
+<img src="https://uploads.onecompiler.io/43faapvtu/1784043277963/WhatsApp%20Image%202026-07-14%20at%208.57.43%20PM%20(2).jpeg"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="cert-box">
+
+<h3> Python Programming (AXCENTRA)</h3>
+<p>Completed a 6-week Python Programming Internship at AXCENTRA. Gained practical experience in Python programming and problem-solving through hands-on projects. </p>
+<img src="https://uploads.onecompiler.io/44b2dhp54/1784089063611/DOC-20260715-WA0001..jpg"
+onclick="openImage(this.src)">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<div class="contact-icons">
+
+<a href="mailto:sujithss810@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/sujith-s-s-2829aa377?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+<a href="https://www.facebook.com/sujithsrao.sujith" target="_blank">
+<i class="fa-brands fa-facebook"></i>
+</a>
+
+<a href="https://www.instagram.com/itz_me_sujith28?igsh=MXVoc2U3b3d0aG11MQ==" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://github.com/sujithss810-hue" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+</div>
+
+</section>
+
+<!-- RESUME MODAL -->
+
+<div class="modal" id="resumeModal">
+
+<span onclick="closeResume()">
+✖
+</span>
+
+<div class="modal-content">
+
+<img src="https://uploads.onecompiler.io/43faapvtu/1784047343284/sujith%20WITHOUT%20pic%20resume.jpg">
+
+<br>
+
+</div>
+
+</div>
+
+<!-- IMAGE MODAL -->
+
+<div class="modal" id="imgModal" onclick="closeImage()">
+
+<span onclick="closeImage()">
+✖
+</span>
+
+<img id="modalImg" onclick="event.stopPropagation()">
+
+</div>
+
+<script>
+
+function openResume(){
+
+document.getElementById("resumeModal").style.display="flex";
+
+}
+
+function closeResume(){
+
+document.getElementById("resumeModal").style.display="none";
+
+}
+
+function openImage(src){
+
+document.getElementById("modalImg").src=src;
+
+document.getElementById("imgModal").style.display="flex";
+
+}
+
+function closeImage(){
+
+document.getElementById("imgModal").style.display="none";
+
+}
+
+/* HIDE RESUME BUTTON */
+
+const resumeBtn=document.querySelector(".resume-top-btn");
+
+window.addEventListener("scroll",()=>{
+
+const homeHeight=document.getElementById("home").offsetHeight;
+
+if(window.scrollY > homeHeight - 200){
+
+resumeBtn.classList.add("hide");
+
+}else{
+
+resumeBtn.classList.remove("hide");
+
+}
+
+});
+
+</script>
+</body>
+</html>
+>Sujith Portfolio</title>
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
